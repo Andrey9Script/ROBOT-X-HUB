@@ -18,7 +18,7 @@ local BotTest2 = instance.new("ImageLabel")
        BotUi.TextColor3 = Color3.fromRGB(0, 0, 0)
        BotUi.TextSize = 14.000
        BotUi.Draggable = true
-        BotTela.MouseButton1Click:Connect(function()
+        BotUi.MouseButton1Click:Connect(function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
         end)
@@ -48,7 +48,7 @@ local tag
 local userinfo = {}
 
 _G.Key = ""
-_G.Discord = "https://discord.gg/"
+_G.Discord = "https://discord.gg/kzZvunqM"
 
 if game.CoreGui:FindFirstChild(_G.Key .."," .. _G.Discord) then
    game.CoreGui:FindFirstChild(_G.Key .."," .. _G.Discord):Destroy()
