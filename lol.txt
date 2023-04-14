@@ -7,7 +7,7 @@ local BotTest2 = instance.new("ImageLabel")
        BotTela.Parent = game.CoreGui
        BotTela.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
        
-       BotUi.Name = "BotUi"
+       BotUi.Name = "RobotUi"
        BotUi.Parent = BotTela
        BotUi.BackgroundColor3 =Color3.fromRGB(51, 255, 51)
        BotUi.BorderSizePixel = 0
@@ -18,13 +18,13 @@ local BotTest2 = instance.new("ImageLabel")
        BotUi.TextColor3 = Color3.fromRGB(0, 0, 0)
        BotUi.TextSize = 14.000
        BotUi.Draggable = true
-        ThunderToggleUI.MouseButton1Click:Connect(function()
+        BotTela.MouseButton1Click:Connect(function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
         end)
 
         BotUI.Name = "BotUi"
-        BotUI.Parent = ThunderToggleUI
+        BotUI.Parent = BotTela
 
         BotUI.Name = "ROBOTUI"
         BotUI.Parent = BotUi
