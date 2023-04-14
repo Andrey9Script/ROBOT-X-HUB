@@ -352,7 +352,7 @@ end)
         local Hour = math.floor(GameTime/(60^2))%24
         local Minute = math.floor(GameTime/(60^1))%60
         local Second = math.floor(GameTime/(60^0))%60
-        timecock.Text = ("Hr(s) : "..Hour.." Min(s) : "..Minute.." Sec(s) : "..Second)
+        timecock.Text = ("Hr(s) : "..Hora.." Min(s) : "..Minuto.." Sec(s) : "..Segundo)
     end
     
     spawn(function()
@@ -3801,7 +3801,7 @@ end)
 
  
 --------------------------------------------------------------------
-local Library = Update:Window("FTS X HUB ","")
+local Library = Update:Window("ROBOT X HUB ","")
 ------------------------------------------
 
 spawn(function()
@@ -4739,13 +4739,13 @@ Main:Button("Stop Teleport",function()
 
 Main:Seperator(" Main ")
 
-Main:Dropdown("Select Mode Farm", {
- "Level Farm","Fast Mode","No Quest","Near Farm Mode"
+Main:Dropdown("Selecione modo de Farme", {
+ "Level Farme","Modo Rapido","Sem Missão","Near Farm Mode"
 },function(value)
  _G.Select_Mode_Farm = value
 end)
 
-Main:Toggle("Start Auto Farm",_G.Auto_Farm_Level,function(value)
+Main:Toggle("Comece Auto Farm",_G.Auto_Farm_Level,function(value)
  _G.Auto_Farm_Level = value
  StopTween(_G.Auto_Farm_Level)
 end)
@@ -4777,23 +4777,23 @@ end
 
 if World2 then
 
-Main:Seperator("Auto New Sea")
+Main:Seperator("Auto Novo Sea")
 
-Main:Toggle("Auto Third Sea",_G.Auto_Third_World,function(value)
+Main:Toggle("Auto Terceiro Sea",_G.Auto_Third_World,function(value)
  _G.Auto_Third_World = value
  StopTween(_G.Auto_Third_World)
  end)
 
-Main:Seperator("Ectoplasm")
+Main:Seperator("Ectoplasma")
 
-Main:Toggle("Auto Farm Ectoplasm",_G.Auto_Farm_Ectoplasm,function(value)
+Main:Toggle("Auto Farme Ectoplasma",_G.Auto_Farm_Ectoplasm,function(value)
  _G.Auto_Farm_Ectoplasm = value
  StopTween(_G.Auto_Farm_Ectoplasm)
  end)
 
-Main:Seperator("Factory")
+Main:Seperator("Fabrica")
 
-Main:Toggle("Auto Farm Factory",_G.AutoFactory,function(value)
+Main:Toggle("Auto Farme Fabrica",_G.AutoFactory,function(value)
  _G.AutoFactory = value
  StopTween(_G.AutoFactory)
  end)
@@ -4825,9 +4825,9 @@ end
 
 if World1 then
 
-Main:Seperator("Auto New Sea")
+Main:Seperator("Auto Novo Sea")
 
-Main:Toggle("Auto Second Sea",_G.Auto_New_World,function(value)
+Main:Toggle("Auto Segundo Sea",_G.Auto_New_World,function(value)
  _G.Auto_New_World = value
  StopTween(_G.Auto_New_World)
  end)
@@ -4846,13 +4846,13 @@ tableMon = {
 }
 end
 
-Main:Seperator(" Other ")
+Main:Seperator(" Outro ")
 
-Main:Dropdown("Select Monster", tableMon, function(vu)
+Main:Dropdown("Selecions Monstros", tableMon, function(vu)
  SelectMonster = vu
  end)
 
-Main:Toggle("Farm Selected Monster",_G.AutoFarmSelectMonster,function(vu)
+Main:Toggle("Farme Monstros Selecionados",_G.AutoFarmSelectMonster,function(vu)
  _G.AutoFarmSelectMonster = vu
 end)
 
@@ -4896,9 +4896,9 @@ spawn(function()
  end
 end)
 
-Main:Seperator(" Mastery ")
+Main:Seperator(" Maestria ")
  
-Main:Toggle("Auto BF Mastery",_G.AutoFarmFruitMastery,function(value)
+Main:Toggle("Auto BF Maestria",_G.AutoFarmFruitMastery,function(value)
   _G.AutoFarmFruitMastery = value
   StopTween(_G.AutoFarmFruitMastery)
   if _G.AutoFarmFruitMastery == false then
@@ -10829,11 +10829,11 @@ Misc:Button("Title Name",function()
 end)
 
 
-Misc:Button("Color Haki",function()
+Misc:Button("Cor Haki",function()
  game.Players.localPlayer.PlayerGui.Main.Colors.Visible = true
 end)
 
-Misc:Seperator(" Codes ")
+Misc:Seperator(" Codigos ")
     
     
 local x2Code = {
@@ -11146,15 +11146,15 @@ if W3 then
 Op:Label("World : 3")
 end
 
-Op:Label("Race : "..game:GetService("Players").LocalPlayer.Data.Race.Value)
+Op:Label("Raça : "..game:GetService("Players").LocalPlayer.Data.Race.Value)
 
-Op:Label("Fruit : "..game.Players.LocalPlayer.Data.DevilFruit.Value)
+Op:Label("Fruta : "..game.Players.LocalPlayer.Data.DevilFruit.Value)
 
 Op:Label("Level : "..game.Players.localPlayer.Data.Level.Value)
 
 Op:Label("Bounty : "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
 
-Op:Seperator("\\\\\  Sword  //")
+Op:Seperator("\\\\\  Espada  //")
 
 local Saber = Op:Label("❌: Saber")
 local Rengoku = Op:Label("❌: Rengoku")
@@ -11214,7 +11214,7 @@ spawn(function()
     end
 end)
 
-Op:Seperator("\\\\\  Quest  //")
+Op:Seperator("\\\\\  Missão  //")
 
 local Bartilo_Quest = Op:Label("❌: Bartilo Quest")
 local Don_Swan_Quest = Op:Label("❌: Don Swan Quest")
@@ -11238,7 +11238,7 @@ spawn(function()
     end
 end)
 
-Op:Seperator("\\\\\  Sword Legendary  //")
+Op:Seperator("\\\\\  Espada Lendaria  //")
 
 local Shisui = Op:Label("❌: Shisui")
 local Saddi = Op:Label("❌: Saddi")
@@ -11266,7 +11266,7 @@ spawn(function()
     end
 end)
 
-Op:Seperator("\\\\\  Melee  //")
+Op:Seperator("\\\\\  Soco  //")
 
 local Superhuman = Op:Label("❌: Superhuman")
 local Death_Step = Op:Label("❌: Death Step")
@@ -11295,7 +11295,7 @@ spawn(function()
     end
 end)
 
-Op:Seperator("\\\\\  Gun  //")
+Op:Seperator("\\\\\  Arma  //")
 
 local Kabu_cha = Op:Label("❌: Kabucha")
 local Acidum_Rifle = Op:Label("❌: Acidum Rifle")
@@ -11321,7 +11321,7 @@ end)
 
 
 
-Op:Seperator("\\\\\  Accessory  //")
+Op:Seperator("\\\\\  Acessorios  //")
 
 local Dark_Coat = Op:Label("❌: Dark Coat")
 local Ghoul_Mask = Op:Label("❌: Ghoul Mask")
