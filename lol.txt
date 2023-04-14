@@ -461,7 +461,7 @@ end)
  local TabButton = Instance.new("TextButton")
  local TabImage = Instance.new("ImageLabel")
  TabButton.Parent = ScrollTab
- TabButton.Name = text.."Server"
+ TabButton.Name = text.."Servidor"
  TabButton.Text = text
  TabButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
  TabButton.BackgroundTransparency = 1.000
@@ -539,7 +539,7 @@ local postog = Instance.new("UIStroke")
 
                     postog,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 
-                    {Color = Color3.fromRGB(255, 0, 0)}
+                    {Color = Color3.fromRGB(102, 255, 102)}
 
                 ):Play() 
 
@@ -549,17 +549,7 @@ local postog = Instance.new("UIStroke")
 
                     postog,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 
-                    {Color = Color3.fromRGB(255, 155, 0)}
-
-                ):Play() 
-
-                wait(.5)            
-
-                game:GetService('TweenService'):Create(
-
-                    postog,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-
-                    {Color = Color3.fromRGB(255, 255, 0)}
+                    {Color = Color3.fromRGB(51, 255, 51)}
 
                 ):Play() 
 
@@ -579,7 +569,7 @@ local postog = Instance.new("UIStroke")
 
                     postog,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 
-                    {Color = Color3.fromRGB(0, 255, 255)}
+                    {Color = Color3.fromRGB(0, 204, 0)}
 
                 ):Play() 
 
@@ -589,7 +579,7 @@ local postog = Instance.new("UIStroke")
 
                     postog,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 
-                    {Color = Color3.fromRGB(0, 155, 255)}
+                    {Color = Color3.fromRGB(0, 153, 0)}
 
                 ):Play() 
 
@@ -599,7 +589,7 @@ local postog = Instance.new("UIStroke")
 
                     postog,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 
-                    {Color = Color3.fromRGB(255, 0, 255)}
+                    {Color = Color3.fromRGB(0, 102, 0)}
 
                 ):Play() 
 
@@ -609,7 +599,17 @@ local postog = Instance.new("UIStroke")
 
                     postog,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 
-                    {Color = Color3.fromRGB(255, 0, 155)}
+                    {Color = Color3.fromRGB(0, 51, 0)}
+
+                ):Play() 
+
+                wait(.5)            
+
+                game:GetService('TweenService'):Create(
+
+                    postog,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+
+                    {Color = Color3.fromRGB(0, 0, 0)}
 
                 ):Play() 
 
@@ -4218,30 +4218,30 @@ spawn(function()
 end)
 
 --------------------------
-local Main = Library:Tab("Main","rbxassetid://11446825283")
-local Setting = Library:Tab("Settings","rbxassetid://11446835336")
-local Weapon = Library:Tab("Weapons","rbxassetid://11446859498")
-local Race = Library:Tab("Race V4","rbxassetid://11446900930")
-local Stats = Library:Tab("Stats","rbxassetid://11447069304")
-local P = Library:Tab("Player","rbxassetid://11446900930")
-local Teleport = Library:Tab("Teleport","rbxassetid://11446920523")
+local Main = Library:Tab("Menu","rbxassetid://11446825283")
+local Setting = Library:Tab("Config","rbxassetid://11446835336")
+local Weapon = Library:Tab("Armas","rbxassetid://11446859498")
+local Race = Library:Tab("Raça V4","rbxassetid://11446900930")
+local Stats = Library:Tab("Estados","rbxassetid://11447069304")
+local P = Library:Tab("Jogador","rbxassetid://11446900930")
+local Teleport = Library:Tab("Teleporte","rbxassetid://11446920523")
 local Dungeon = Library:Tab("Dungeon","rbxassetid://11446957539")
-local DevilFruit = Library:Tab("Fruit+Esp","rbxassetid://11446965348")
-local Shop = Library:Tab("Shop","rbxassetid://6031265976")
-local Misc = Library:Tab("Misc","rbxassetid://11447063791")
-local Op = Library:Tab("Status", "rbxassetid://7040410130")
+local DevilFruit = Library:Tab("Fruta+Esp","rbxassetid://11446965348")
+local Shop = Library:Tab("Loja","rbxassetid://6031265976")
+local Misc = Library:Tab("Varios","rbxassetid://11447063791")
+local Op = Library:Tab("Estados", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
-Setting:Label("Join My Discord For More Info!")
+Setting:Label("Entre no Discod Para Receber Atualizações")
 
 Setting:Line()
 
-Setting:Button("Copy Discord Link",function()
+Setting:Button("Copie Link Do Discord",function()
  
  setclipboard("https://discord.gg/pMXwTQz6Yk")
  end)
 
-Setting:Seperator(" Setting ")
+Setting:Seperator(" Config ")
 Setting:Toggle("Auto Set Spawn Points",true,function(value)
  _G.AutoSetSpawn = value
  end)
