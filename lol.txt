@@ -33,7 +33,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
         ThunderImageUI.BorderSizePixel = 0
         ThunderImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
         ThunderImageUI.Size = UDim2.new(0, 50, 0, 50)
-        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=13120876414"
+        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=13126670773"
 
 local SOMEXHUB = {}
 local UserInputService = game:GetService("UserInputService")
@@ -122,7 +122,7 @@ local pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Pla
 function Update:Window(text,logo,keybind)
 	local uihide = false
 	local abc = false
-	local logo = logo or 13120876414
+	local logo = logo or 13126670773
 	local currentpage = ""
 	local keybind = keybind or Enum.KeyCode.RightControl
 	local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
@@ -164,7 +164,7 @@ function Update:Window(text,logo,keybind)
  Logo.BackgroundTransparency = 1.000
  Logo.Position = UDim2.new(-0.01, 0,-0.170, 0)
  Logo.Size = UDim2.new(0, 55,0, 45)
-Logo.Image = "rbxassetid://13120876414"
+Logo.Image = "rbxassetid://13126670773"
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
@@ -197,42 +197,42 @@ Logo.Image = "rbxassetid://13120876414"
                     wait(0.1) 
                     game:GetService('TweenService'):Create(
                         Name,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                        {TextColor3 = Color3.fromRGB(255, 255, 255)}
+                        {TextColor3 = Color3.fromRGB(102, 255, 102)}
                     ):Play() 
                     wait(.5)            
                     game:GetService('TweenService'):Create(
                         Name,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                        {TextColor3 = Color3.fromRGB(224, 224, 224)}
+                        {TextColor3 = Color3.fromRGB(51, 255, 51)}
                     ):Play() 
                     wait(.5)            
                     game:GetService('TweenService'):Create(
                         Name,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                        {TextColor3 = Color3.fromRGB(192, 192, 192)}
+                        {TextColor3 = Color3.fromRGB(0, 255, 0)}
                     ):Play() 
                     wait(.5)            
                     game:GetService('TweenService'):Create(
                         Name,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                        {TextColor3 = Color3.fromRGB(160, 160, 160)}
+                        {TextColor3 = Color3.fromRGB(0, 204, 0)}
                     ):Play() 
                     wait(.5)            
                     game:GetService('TweenService'):Create(
                         Name,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                        {TextColor3 = Color3.fromRGB(128, 128, 128)}
+                        {TextColor3 = Color3.fromRGB(0, 153, 0)}
                     ):Play() 
                     wait(.5)            
                     game:GetService('TweenService'):Create(
                         Name,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                        {TextColor3 = Color3.fromRGB(96, 96, 96)}
+                        {TextColor3 = Color3.fromRGB(0, 102, 0)}
                     ):Play() 
                     wait(.5)            
                     game:GetService('TweenService'):Create(
                         Name,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                        {TextColor3 = Color3.fromRGB(64, 64, 64)}
+                        {TextColor3 = Color3.fromRGB(0, 51, 0)}
                     ):Play() 
                     wait(.5)            
                     game:GetService('TweenService'):Create(
                         Name,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                        {TextColor3 = Color3.fromRGB(32, 32, 32)}
+                        {TextColor3 = Color3.fromRGB(0, 0, 0)}
                     ):Play() 
                     wait(.5)
                 end)
@@ -3801,7 +3801,7 @@ end)
 
  
 --------------------------------------------------------------------
-local Library = Update:Window("ROBOTX HUB","")
+local Library = Update:Window("ROBOT X HUB","")
 ------------------------------------------
 
 spawn(function()
