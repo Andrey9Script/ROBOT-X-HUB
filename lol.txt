@@ -7,7 +7,7 @@ local BotTest2 = instance.new("ImageLabel")
        BotTela.Parent = game.CoreGui
        BotTela.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
        
-       BotUi.Name = "RobotUi"
+       BotUi.Name = "BotUi"
        BotUi.Parent = BotTela
        BotUi.BackgroundColor3 =Color3.fromRGB(51, 255, 51)
        BotUi.BorderSizePixel = 0
@@ -26,8 +26,8 @@ local BotTest2 = instance.new("ImageLabel")
         BotUI.Name = "BotUi"
         BotUI.Parent = BotTela
 
-        BotUI.Name = "ROBOTUI"
-        BotUI.Parent = BotUi
+        BotUI.Name = "BotUi"
+        BotUI.Parent = BotTela
         BotUI.BackgroundColor3 = Color3.fromRGB(192,192,192)
         BotUI.BackgroundTransparency = 1.000
         BotUI.BorderSizePixel = 0
@@ -149,7 +149,7 @@ function Update:Window(text,logo,keybind)
 
 	local Top = Instance.new("Frame")
 	Top.Name = "Top"
-	Top.Parent = Main
+	Top.Parent = Menu
 	Top.BackgroundColor3 = Color3.fromRGB(20,20,20)
 	Top.Size = UDim2.new(0, 530, 0, 63)
 
