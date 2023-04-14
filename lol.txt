@@ -1,39 +1,39 @@
-local BotTela = instance.new("ScreenGui")
-local BotUi = instance.new("TextButton")
-local BotTest = instance.new("UiCorner")
-local BotTest2 = instance.new("ImageLabel")
+local BotTela = Instance.new("ScreenGui")
+local BotUi = Instance.new("TextButton")
+local BotCantoUi = Instance.new("UICorner")
+local BotImagemUi = Instance.new("ImageLabel")
 
-       BotTela.Name = "BotTela"
-       BotTela.Parent = game.CoreGui
-       BotTela.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-       
-       BotUi.Name = "BotUi"
-       BotUi.Parent = BotTela
-       BotUi.BackgroundColor3 =Color3.fromRGB(51, 255, 51)
-       BotUi.BorderSizePixel = 0
-       BotUi.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-       BotUi.Size = UDim2.new(0, 50, 0, 50)
-       BotUi.Font = Enum.Font.SourceSans
-       BotUi.Text = "T"
-       BotUi.TextColor3 = Color3.fromRGB(0, 0, 0)
-       BotUi.TextSize = 14.000
-       BotUi.Draggable = true
+        BotTela.Name = "BotTela"
+        BotTela.Parent = game.CoreGui
+        BotTela.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+        BotUi.Name = "BotUi"
+        BotUi.Parent = BotTela
+        BotUi.BackgroundColor3 = Color3.fromRGB(31,31,31)
+        BotUi.BorderSizePixel = 0
+        BotUi.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+        BotUi.Size = UDim2.new(0, 50, 0, 50)
+        BotUi.Font = Enum.Font.SourceSans
+        BotUi.Text = ""
+        BotUi.TextColor3 = Color3.fromRGB(0, 0, 0)
+        BotUi.TextSize = 14.000
+        BotUi.Draggable = true
         BotUi.MouseButton1Click:Connect(function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
         end)
 
-        BotUI.Name = "BotUi"
-        BotUI.Parent = BotTela
+        BotCantoUi.Name = "BotCantoUi"
+        BotCantoUi.Parent = BotUi
 
-        BotUI.Name = "BotUi"
-        BotUI.Parent = BotTela
-        BotUI.BackgroundColor3 = Color3.fromRGB(192,192,192)
-        BotUI.BackgroundTransparency = 1.000
-        BotUI.BorderSizePixel = 0
-        BotUI.Position = UDim2.new(0.0, 0, 0.0, 0)
-        BotUI.Size = UDim2.new(0, 50, 0, 50)
-        BotUI.Image = "http://www.roblox.com/asset/?id=13126670773"
+        BotImagemUi.Name = "MODILEMAGE"
+        BotImagemUi.Parent = BotUi
+        BotImagemUi.BackgroundColor3 = Color3.fromRGB(192,192,192)
+        BotImagemUi.BackgroundTransparency = 1.000
+        BotImagemUi.BorderSizePixel = 0
+        BotImagemUi.Position = UDim2.new(0.0, 0, 0.0, 0)
+        BotImagemUi.Size = UDim2.new(0, 50, 0, 50)
+        BotImagemUi.Image = "http://www.roblox.com/asset/?id=12986011583"
 
 local SOMEXHUB = {}
 local UserInputService = game:GetService("UserInputService")
@@ -48,7 +48,7 @@ local tag
 local userinfo = {}
 
 _G.Key = ""
-_G.Discord = "https://discord.gg/kzZvunqM"
+_G.Discord = "https://discord.gg/RsBHAqQtHe"
 
 if game.CoreGui:FindFirstChild(_G.Key .."," .. _G.Discord) then
    game.CoreGui:FindFirstChild(_G.Key .."," .. _G.Discord):Destroy()
@@ -122,40 +122,40 @@ local pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Pla
 function Update:Window(text,logo,keybind)
 	local uihide = false
 	local abc = false
-	local logo = logo or 13126670773
+	local logo = logo or 12986011583
 	local currentpage = ""
 	local keybind = keybind or Enum.KeyCode.RightControl
 	local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
 	
-	local ROBOTHUB2 = Instance.new("ScreenGui")
-	ROBOTHUB2.Name = "ROBOTXHUB by Andrey"
-	ROBOTHUB2.Parent = game.CoreGui
-	ROBOTHUB2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	local BotHubScript = Instance.new("ScreenGui")
+	BotHubScript.Name = "ZEN HUB By King's Hub"
+	BotHubScript.Parent = game.CoreGui
+	BotHubScript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	local Menu = Instance.new("Frame")
-	Menu.Name = "Menu"
-	Menu.Parent = ROBOTXHUB2
-	Menu.ClipsDescendants = true
-	Menu.AnchorPoint = Vector2.new(0.5,0.5)
-	Menu.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-	Menu.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Menu.Size = UDim2.new(0, 0, 0, 0)
+	local Main = Instance.new("Frame")
+	Main.Name = "Main"
+	Main.Parent = BotHubScript
+	Main.ClipsDescendants = true
+	Main.AnchorPoint = Vector2.new(0.5,0.5)
+	Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Main.Size = UDim2.new(0, 0, 0, 0)
 	
-	Menu:TweenSize(UDim2.new(0, 530, 0, 330),"Out","Quad",0.4,true)
+	Main:TweenSize(UDim2.new(0, 530, 0, 330),"Out","Quad",0.4,true)
 
-	local RobotA = Instance.new("UICorner")
-	RobotA.Name = "RobotA"
-	RobotA.Parent = Menu
+	local MCNR = Instance.new("UICorner")
+	MCNR.Name = "MCNR"
+	MCNR.Parent = Main
 
 	local Top = Instance.new("Frame")
 	Top.Name = "Top"
-	Top.Parent = Menu
+	Top.Parent = Main
 	Top.BackgroundColor3 = Color3.fromRGB(20,20,20)
 	Top.Size = UDim2.new(0, 530, 0, 63)
 
-	local RobotB = Instance.new("UICorner")
-	RobotB.Name = "RobotB"
-	RobotB.Parent = Top
+	local TCNR = Instance.new("UICorner")
+	TCNR.Name = "TCNR"
+	TCNR.Parent = Top
 
 	local Logo = Instance.new("ImageLabel")
  Logo.Name = "Logo"
@@ -164,7 +164,7 @@ function Update:Window(text,logo,keybind)
  Logo.BackgroundTransparency = 1.000
  Logo.Position = UDim2.new(-0.01, 0,-0.170, 0)
  Logo.Size = UDim2.new(0, 55,0, 45)
-Logo.Image = "rbxassetid://13126670773"
+Logo.Image = "rbxassetid://12986011583"
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
@@ -186,7 +186,7 @@ Logo.Image = "rbxassetid://13126670773"
 	Hub.Position = UDim2.new(0, 150, 0, 0)
 	Hub.Size = UDim2.new(0, 81, 0, 27)
 	Hub.Font = Enum.Font.GothamSemibold
-	Hub.Text = " Blox Fruit Vip"
+	Hub.Text = " Blox Fruit UPD 18"
 	Hub.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Hub.TextSize = 14.000
 	Hub.TextXAlignment = Enum.TextXAlignment.Left
@@ -294,45 +294,45 @@ local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function(ping) 
 Ping.Parent.Text = ("[Ping] : " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping)))
 end)
-    local Usuario = Instance.new("Frame")
-    Usuario.Name = "Usuario"
-    Usuario.Parent = Top
-    Usuario.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Usuario.BackgroundTransparency = 1.000
-    Usuario.Position = UDim2.new(0, 0,0, 25)
-    Usuario.Size = UDim2.new(0, 125, 0, 40)
+    local User = Instance.new("Frame")
+    User.Name = "User"
+    User.Parent = Top
+    User.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    User.BackgroundTransparency = 1.000
+    User.Position = UDim2.new(0, 0,0, 25)
+    User.Size = UDim2.new(0, 125, 0, 40)
     
-    local TextoUsuario = Instance.new("TextLabel")
-    TextoUsuario.Name = "TextoUsuario"
-    TextoUsuario.Parent = Usuario
-    TextoUsuario.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    TextoUsuario.BackgroundTransparency = 1.000
-    TextoUsuario.Position = UDim2.new(0.4, 0,0, 10)
-	TextoUsuario.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextoUsuario.Size = UDim2.new(0, 80, 0, 20)
-    TextoUsuario.Font = Enum.Font.GothamSemibold
-    TextoUsuario.Text = tostring(game.Players.LocalPlayer.Name)
-    TextoUsuario.TextScaled = true
-    TextoUsuario.TextSize = 17.000
-    TextoUsuario.TextWrapped = true
-    TextoUsuario.TextXAlignment = Enum.TextXAlignment.Left
+    local UserText = Instance.new("TextLabel")
+    UserText.Name = "UserText"
+    UserText.Parent = User
+    UserText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    UserText.BackgroundTransparency = 1.000
+    UserText.Position = UDim2.new(0.4, 0,0, 10)
+	UserText.TextColor3 = Color3.fromRGB(255, 255, 255)
+    UserText.Size = UDim2.new(0, 80, 0, 20)
+    UserText.Font = Enum.Font.GothamSemibold
+    UserText.Text = tostring(game.Players.LocalPlayer.Name)
+    UserText.TextScaled = true
+    UserText.TextSize = 17.000
+    UserText.TextWrapped = true
+    UserText.TextXAlignment = Enum.TextXAlignment.Left
     
     local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-    UITextSizeConstraint.Parent = TextoUsuario
+    UITextSizeConstraint.Parent = UserText
     UITextSizeConstraint.MaxTextSize = 17
     
-    local ImagemUsuario = Instance.new("ImageLabel")
-    ImagemUsuario.Name = "ImagemUsuario"
-    ImagemUsuario.Parent = Usuario
-    ImagemUsuario.BackgroundTransparency = 0
-    ImagemUsuario.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
-    imagemUsuario.Position = UDim2.new(0, 10, 0, 9)
-    ImagemUsuario.Size = UDim2.new(0, 25, 0, 25)
-    ImagemUsuario.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
+    local UserImage = Instance.new("ImageLabel")
+    UserImage.Name = "UserImage"
+    UserImage.Parent = User
+    UserImage.BackgroundTransparency = 0
+    UserImage.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
+    UserImage.Position = UDim2.new(0, 10, 0, 9)
+    UserImage.Size = UDim2.new(0, 25, 0, 25)
+    UserImage.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
     local UserImageCorner = Instance.new("UICorner")
    UserImageCorner.CornerRadius = UDim.new(0, 100)
-    UserImageCorner.Name = "ImagemUsuarioCorner"
-    UserImageCorner.Parent = ImagemUsuario
+    UserImageCorner.Name = "UserImageCorner"
+    UserImageCorner.Parent = UserImage
     
 	local timecock = Instance.new("TextButton")
 	timecock.Parent = Top
@@ -352,7 +352,7 @@ end)
         local Hour = math.floor(GameTime/(60^2))%24
         local Minute = math.floor(GameTime/(60^1))%60
         local Second = math.floor(GameTime/(60^0))%60
-        timecock.Text = ("Hr(s) : "..Hora.." Min(s) : "..Minuto.." Sec(s) : "..Segundo)
+        timecock.Text = ("Hr(s) : "..Hour.." Min(s) : "..Minute.." Sec(s) : "..Second)
     end
     
     spawn(function()
@@ -363,29 +363,29 @@ end)
         end
     end)
     
- local Aba = Instance.new("Frame")
- Aba.Name = "Aba"
- Aba.Parent = Menu
- Aba.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
- Aba.Position = UDim2.new(0, 5, 0, 60)
+ local Tab = Instance.new("Frame")
+ Tab.Name = "Tab"
+ Tab.Parent = Main
+ Tab.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+ Tab.Position = UDim2.new(0, 5, 0, 60)
  --Tab.CornerRadius = UDim.new(0,5)
- Aba.Size = UDim2.new(0, 0, 0, 0)
+ Tab.Size = UDim2.new(0, 0, 0, 0)
  --Tab.Size = UDim2.new(0, 150, 0, 365)
  
- --local AbaCanto = Instance.new("UICorner")
- local AbaCanto = Instance.new("UIListLayout")
- AbaCanto.Name = "AbaCanto"
- AbaCanto.Parent = Aba
- AbaCanto.SortOrder = Enum.SortOrder.LayoutOrder
- AbaCanto.Padding = UDim.new(0, 15)
+ --local TabCorner = Instance.new("UICorner")
+ local TabCorner = Instance.new("UIListLayout")
+ TabCorner.Name = "TabCorner"
+ TabCorner.Parent = Tab
+ TabCorner.SortOrder = Enum.SortOrder.LayoutOrder
+ TabCorner.Padding = UDim.new(0, 15)
  
- local RobotX = Instance.new("UICorner")
- RobotC.Name = "RobotC"
- RobotC.Parent = Aba
+ local TCNR = Instance.new("UICorner")
+ TCNR.Name = "TCNR"
+ TCNR.Parent = Tab
  
  local ScrollTab = Instance.new("ScrollingFrame")
  ScrollTab.Name = "ScrollTab"
- ScrollTab.Parent = Aba
+ ScrollTab.Parent = Tab
  ScrollTab.Active = true
  ScrollTab.BackgroundColor3 = Color3.fromRGB(224,224,224)
  ScrollTab.BackgroundTransparency = 1.000
@@ -405,33 +405,33 @@ end)
  PPD.PaddingLeft = UDim.new(0, 10)
  PPD.PaddingTop = UDim.new(0, 10)
  
- local Pagina = Instance.new("Frame")
- Pagina.Name = "Pagina"
- Pagina.Parent = Menu
- Pagina.BackgroundColor3 = Color3.fromRGB(35,35,35)
- Pagina.Position = UDim2.new(0.26, 0, 0.211050003, 0)
- Pagina.BackgroundTransparency = 1
- Pagina.Size = UDim2.new(0, 388, 0, 248)
+ local Page = Instance.new("Frame")
+ Page.Name = "Page"
+ Page.Parent = Main
+ Page.BackgroundColor3 = Color3.fromRGB(35,35,35)
+ Page.Position = UDim2.new(0.26, 0, 0.211050003, 0)
+ Page.BackgroundTransparency = 1
+ Page.Size = UDim2.new(0, 388, 0, 248)
  
- local RobotD = Instance.new("UICorner")
- RobotD.Name = "RobotD"
- RobotD.Parent = Page
+ local PCNR = Instance.new("UICorner")
+ PCNR.Name = "PCNR"
+ PCNR.Parent = Page
  
- local MenuPagina = Instance.new("Frame")
- MenuPagina.Name = "MenuPagina"
- MenuPagina.Parent = Pagina
- MenuPaginaClipsDescendants = true
- MenuPagina.BackgroundColor3 = Color3.fromRGB(224,224,224)
- MenuPagina.BackgroundTransparency = 1.000
- MenuPaginaSize = UDim2.new(0, 400, 0, 316)
+ local MainPage = Instance.new("Frame")
+ MainPage.Name = "MainPage"
+ MainPage.Parent = Page
+ MainPage.ClipsDescendants = true
+ MainPage.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ MainPage.BackgroundTransparency = 1.000
+ MainPage.Size = UDim2.new(0, 400, 0, 316)
  
- local ListaPagina = Instance.new("Folder")
- ListaPagina.Name = "ListaPagina"
- ListaPagina.Parent = MenuPagina
+ local PageList = Instance.new("Folder")
+ PageList.Name = "PageList"
+ PageList.Parent = MainPage
  
  local UIPageLayout = Instance.new("UIPageLayout")
  
- UIPageLayout.Parent = ListaPagina
+ UIPageLayout.Parent = PageList
  UIPageLayout.SortOrder = Enum.SortOrder.LayoutOrder
  UIPageLayout.EasingDirection = Enum.EasingDirection.InOut
  UIPageLayout.EasingStyle = Enum.EasingStyle.Quad
@@ -442,50 +442,50 @@ end)
  UIPageLayout.ScrollWheelInputEnabled = false
  UIPageLayout.TouchInputEnabled = false
  
- MakeDraggable(Top,Menu)
+ MakeDraggable(Top,Main)
  
  UserInputService.InputBegan:Connect(function(input)
   if input.KeyCode == Enum.KeyCode[yoo] then
   if uihide == false then
   uihide = true
-  Menu:TweenSize(UDim2.new(0, 0, 0, 0),"In","Quad",0.4,true)
+  Main:TweenSize(UDim2.new(0, 0, 0, 0),"In","Quad",0.4,true)
   else
    uihide = false
-  Menu:TweenSize(UDim2.new(0, 530, 0, 330),"Out","Quad",0.5,true)
+  Main:TweenSize(UDim2.new(0, 530, 0, 330),"Out","Quad",0.5,true)
   end
   end
   end)
  local uitab = {}
  
- function uitab:Aba(text,icon)
- local AbaBotao = Instance.new("TextButton")
- local AbaBotao = Instance.new("ImageLabel")
- AbaBotao.Parent = ScrollTab
- AbaBotao.Name = text.."Servidor"
- AbaBotao.Text = text
- AbaBotao.BackgroundColor3 = Color3.fromRGB(224,224,224)
- AbaBotao.BackgroundTransparency = 1.000
- AbaBotao.Size = UDim2.new(0, 125, 0, 23)
- AbaBotao.Font = Enum.Font.GothamSemibold
- AbaBotao.TextColor3 = Color3.fromRGB(225, 225, 225)
- AbaBotao.TextSize = 11.000
- AbaBotao.TextTransparency = 0.100
+ function uitab:Tab(text,icon)
+ local TabButton = Instance.new("TextButton")
+ local TabImage = Instance.new("ImageLabel")
+ TabButton.Parent = ScrollTab
+ TabButton.Name = text.."Server"
+ TabButton.Text = text
+ TabButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ TabButton.BackgroundTransparency = 1.000
+ TabButton.Size = UDim2.new(0, 125, 0, 23)
+ TabButton.Font = Enum.Font.GothamSemibold
+ TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
+ TabButton.TextSize = 11.000
+ TabButton.TextTransparency = 0.100
  
- local AbaQuadro = Instance.new("Frame")
+ local TabFrame = Instance.new("Frame")
  local UICornerFrame = Instance.new("UICorner")
- AbaQuadro.Name = "AbaQuadro"
- AbaQuadro.Parent = AbaBotao
- AbaQuadro.ClipsDescendants = true
- --AbaQuadro.Position = UDim2.new(0, 1, 0.1, 2)
- AbaQuadro.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
- AbaQuadro.BackgroundTransparency = 0.500
- AbaQuadro.Size = UDim2.new(0, 118, 0.1, 23)
+ TabFrame.Name = "TabFrame"
+ TabFrame.Parent = TabButton
+ TabFrame.ClipsDescendants = true
+ --TabFrame.Position = UDim2.new(0, 1, 0.1, 2)
+ TabFrame.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+ TabFrame.BackgroundTransparency = 0.500
+ TabFrame.Size = UDim2.new(0, 118, 0.1, 23)
  UICornerFrame.CornerRadius = UDim.new(0,0)
  
 local postog = Instance.new("UIStroke")
  
  postog.Name = "postog"
- postog.Parent = AbaQuadro
+ postog.Parent = TabFrame
  postog.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
  postog.Color = Color3.fromRGB(255,255,255)
  postog.LineJoinMode = Enum.LineJoinMode.Round
@@ -494,37 +494,37 @@ local postog = Instance.new("UIStroke")
  postog.Enabled = true
  postog.Archivable = true
  
- UICornerFrame.Parent = AbaQuadro
+ UICornerFrame.Parent = TabFrame
  
- AbaImagem.Name = text or "AbaImagem"
- AbaImagem.Parent = AbaQuadro
- AbaImagem.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
- AbaImagem.BackgroundTransparency = 1.000
- AbaImagem.Position = UDim2.new(0, 0, 0, 0)
- AbaImagem.Size = UDim2.new(0, 20, 0, 20)
- AbaImagem.Image = "rbxassetid://"..tostring(icon)
- AbaImagem.ImageColor3 = Color3.fromRGB(225, 225, 225)
+ TabImage.Name = text or "TabImage"
+ TabImage.Parent = TabFrame
+ TabImage.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
+ TabImage.BackgroundTransparency = 1.000
+ TabImage.Position = UDim2.new(0, 0, 0, 0)
+ TabImage.Size = UDim2.new(0, 20, 0, 20)
+ TabImage.Image = "rbxassetid://"..tostring(icon)
+ TabImage.ImageColor3 = Color3.fromRGB(225, 225, 225)
  
- local MenuQuadroPagina= Instance.new("ScrollingFrame")
- MenuQuadroPagina.Name = text.."_Page"
- MenuQuadroPagina.Parent = PageList
- MenuQuadroPagina.Active = true
- MenuQuadroPagina.BackgroundColor3 = Color3.fromRGB(224,224,224)
- MenuQuadroPagina.BackgroundTransparency = 1.000
- MenuQuadroPagina.BorderSizePixel = 0
- MenuQuadroPagina.Size = UDim2.new(0, 400, 0, 245)
- MenuQuadroPagina.CanvasSize = UDim2.new(0, 0, 0, 0)
- MenuQuadroPagina.ScrollBarThickness = 4
+ local MainFramePage = Instance.new("ScrollingFrame")
+ MainFramePage.Name = text.."_Page"
+ MainFramePage.Parent = PageList
+ MainFramePage.Active = true
+ MainFramePage.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ MainFramePage.BackgroundTransparency = 1.000
+ MainFramePage.BorderSizePixel = 0
+ MainFramePage.Size = UDim2.new(0, 400, 0, 245)
+ MainFramePage.CanvasSize = UDim2.new(0, 0, 0, 0)
+ MainFramePage.ScrollBarThickness = 4
  
  local UIPadding = Instance.new("UIPadding")
  local UIListLayout = Instance.new("UIListLayout")
  
- UIPadding.Parent = MenuQuadroPagina
+ UIPadding.Parent = MainFramePage
  UIPadding.PaddingLeft = UDim.new(0, 10)
  UIPadding.PaddingTop = UDim.new(0, 10)
  
  UIListLayout.Padding = UDim.new(0,15)
- UIListLayout.Parent = MenuQuadroPagina
+ UIListLayout.Parent = MainFramePage
  UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
  
   spawn(function()
@@ -673,58 +673,58 @@ local postog = Instance.new("UIStroke")
  
  game:GetService("RunService").Stepped:Connect(function()
   pcall(function()
-   MenuQuadroPagina.CanvasSize = UDim2.new(0,0,0,UIListLayout.AbsoluteContentSize.Y + 20)
+   MainFramePage.CanvasSize = UDim2.new(0,0,0,UIListLayout.AbsoluteContentSize.Y + 20)
    ScrollTab.CanvasSize = UDim2.new(0,0,0,PLL.AbsoluteContentSize.Y + 20)
    end)
  end)
 
-local main = {}
- function main:Button(text,callback)
- local Botao = Instance.new("Frame")
- local UiCanto = Instance.new("UICorner")
- local TextoBtn = Instance.new("TextButton")
- local UICanto_2 = Instance.new("UICorner")
+local menu = {}
+ function menu:Button(text,callback)
+ local Button = Instance.new("Frame")
+ local UICorner = Instance.new("UICorner")
+ local TextBtn = Instance.new("TextButton")
+ local UICorner_2 = Instance.new("UICorner")
  local Black = Instance.new("Frame")
- local UICanto_3 = Instance.new("UICorner")
+ local UICorner_3 = Instance.new("UICorner")
  
- Botao.Name = "Botao"
- Botao.Parent = MenuQuadroPagina
- Botao.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
- Botak.BackgroundTransparency = 1
- Botao.Size = UDim2.new(0, 370, 0, 31)
+ Button.Name = "Button"
+ Button.Parent = MainFramePage
+ Button.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
+ Button.BackgroundTransparency = 1
+ Button.Size = UDim2.new(0, 370, 0, 31)
  
- UICanto.CornerRadius = UDim.new(0, 5)
- UICanto.Parent = Botao
+ UICorner.CornerRadius = UDim.new(0, 5)
+ UICorner.Parent = Button
  
- TextoBtn.Name = "TextoBtn"
- TextoBtn.Parent = Button
- TextiBtn.BackgroundColor3 = Color3.fromRGB(244,244,244)
- TextoBtn.BackgroundTransparency = 0.500
- TextoBtn.Position = UDim2.new(0, 1, 0, 1)
+ TextBtn.Name = "TextBtn"
+ TextBtn.Parent = Button
+ TextBtn.BackgroundColor3 = Color3.fromRGB(244,244,244)
+ TextBtn.BackgroundTransparency = 0.500
+ TextBtn.Position = UDim2.new(0, 1, 0, 1)
  TextBtn.Size = UDim2.new(0, 368, 0, 29)
- TextoBtn.AutoButtonColor = false
- TextoBtn.Font = Enum.Font.GothamSemibold
- TextoBtn.Text = texto
- TextoBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
- TextoBtn.TextSize = 12.000
+ TextBtn.AutoButtonColor = false
+ TextBtn.Font = Enum.Font.GothamSemibold
+ TextBtn.Text = text
+ TextBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ TextBtn.TextSize = 12.000
  
- UICanto_2.CornerRadius = UDim.new(0, 5)
- UICanto_2.Parent = TextoBtn
+ UICorner_2.CornerRadius = UDim.new(0, 5)
+ UICorner_2.Parent = TextBtn
  
  Black.Name = "Black"
- Black.Parent = Botao
+ Black.Parent = Button
  Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
  Black.BackgroundTransparency = 1.000
  Black.BorderSizePixel = 0
  Black.Position = UDim2.new(0, 1, 0, 1)
  Black.Size = UDim2.new(0, 370, 0, 29)
  
- UICanto_3.CornerRadius = UDim.new(0, 5)
- UICanto_3.Parent = Black
+ UICorner_3.CornerRadius = UDim.new(0, 5)
+ UICorner_3.Parent = Black
  
  
  
- TextoBtn.MouseEnter:Connect(function()
+ TextBtn.MouseEnter:Connect(function()
   TweenService:Create(
    Black,
    TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -733,7 +733,7 @@ local main = {}
    }
   ):Play()
   end)
- TextoBtn.MouseLeave:Connect(function()
+ TextBtn.MouseLeave:Connect(function()
   TweenService:Create(
    Black,
    TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -742,10 +742,10 @@ local main = {}
    }
   ):Play()
   end)
- TextoBtn.MouseButton1Click:Connect(function()
-  TextoBtn.TextSize = 0
+ TextBtn.MouseButton1Click:Connect(function()
+  TextBtn.TextSize = 0
   TweenService:Create(
-   TextoBtn,
+   TextBtn,
    TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
    {
     TextSize = 12
@@ -754,7 +754,7 @@ local main = {}
   callback()
   end)
  end
- function main:Toggle(TogInfo,default,callback)
+ function menu:Toggle(TogInfo,default,callback)
  local toggle = false
  local CheckFrame = Instance.new("Frame")
  local CheckFrame2 = Instance.new("Frame")
@@ -767,7 +767,7 @@ local main = {}
  
  -- Prop --
  CheckFrame.Name = TogInfo or "CheckFrame"
- CheckFrame.Parent = MenuQuadroPagina
+ CheckFrame.Parent = MainFramePage
  CheckFrame.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
  CheckFrame.BackgroundTransparency = 1.000
  CheckFrame.BorderSizePixel = 0
@@ -875,7 +875,7 @@ local postog12 = Instance.new("UIStroke")
  end
 
  
-function main:Dropdown(text,option,callback)
+function menu:Dropdown(text,option,callback)
  local isdropping = false
  local Dropdown = Instance.new("Frame")
  local UICorner = Instance.new("UICorner")
@@ -888,7 +888,7 @@ function main:Dropdown(text,option,callback)
  local posto1 = Instance.new("UIStroke")
  
  Dropdown.Name = "Dropdown"
- Dropdown.Parent = MenuQuadroPagina
+ Dropdown.Parent = MainFramePage
  Dropdown.BackgroundColor3 = Color3.fromRGB(28,28,28)
  Dropdown.BackgroundTransparency = 1
  Dropdown.ClipsDescendants = true
@@ -1098,7 +1098,7 @@ function main:Dropdown(text,option,callback)
  return dropfunc
  end
  
-function main:Slider1(slidertitle, min, max, start, callback)
+function menu:Slider1(slidertitle, min, max, start, callback)
 local slider1func = {}
 local SliderFrame = Instance.new("Frame")
 local SliderFrame_2 = Instance.new("Frame")
@@ -1121,7 +1121,7 @@ local UICorner_3 = Instance.new("UICorner")
 
 -- Prop --
 SliderFrame.Name = slidertitle or "SliderFrame"
-SliderFrame.Parent = MenuQuadroPagina
+SliderFrame.Parent = MainFramePage
 SliderFrame.BackgroundColor3 = Color3.fromRGB(28,28,28)
 SliderFrame.BackgroundTransparency = 1.000
 SliderFrame.BorderSizePixel = 0
@@ -1468,14 +1468,14 @@ end
  _G.ImageColor = Color3.fromRGB(150, 150, 150)
  _G.LineThemeColor = Color3.fromRGB(150, 150, 150)
  _G.TabTextColor = Color3.fromRGB(150, 150, 150)
- _G.AbaImagemColor = Color3.fromRGB(150, 150, 150)
+ _G.TabImageColor = Color3.fromRGB(150, 150, 150)
  _G.TabThemeColor = Color3.fromRGB(250, 0, 0)
  _G.SectionColor = Color3.fromRGB(150, 150, 150)
  _G.SectionImageColor = Color3.fromRGB(150, 150, 150)
  _G.SectionTextColor = Color3.fromRGB(150, 150, 150)
  _G.SectionOn = Color3.fromRGB(0, 250, 0)
  
- function main:Slider(text,min,max,set,callback)
+ function menu:Slider(text,min,max,set,callback)
  local Slider = Instance.new("Frame")
  local slidercorner = Instance.new("UICorner")
  local sliderr = Instance.new("Frame")
@@ -1496,7 +1496,7 @@ end
  local posto = Instance.new("UIStroke")
  
  Slider.Name = "Slider"
- Slider.Parent = MenuQuadroPagina
+ Slider.Parent = MainFramePage
  Slider.BackgroundColor3 = Color3.fromRGB(255,255,255)
  Slider.BackgroundTransparency = 0.8
  Slider.Size = UDim2.new(0, 370, 0, 51)
@@ -1664,7 +1664,7 @@ end
   pcall(callback, TextBox.Text)
   end)
  end
- function main:Textbox(text,disappear,callback)
+ function menu:Textbox(text,disappear,callback)
  local Textbox = Instance.new("Frame")
  local TextboxCorner = Instance.new("UICorner")
  local Textboxx = Instance.new("Frame")
@@ -1675,7 +1675,7 @@ end
  local UICorner = Instance.new("UICorner")
  
  Textbox.Name = "Textbox"
- Textbox.Parent = MenuQuadroPagina
+ Textbox.Parent = MainFramePage
  Textbox.BackgroundColor3 = Color3.fromRGB(255,255,255)
  Textbox.BackgroundTransparency = 0.8
  Textbox.Size = UDim2.new(0, 370, 0, 31)
@@ -1740,13 +1740,13 @@ end
  UICorner.CornerRadius = UDim.new(0, 5)
  UICorner.Parent = RealTextbox
  end
- function main:Label(text)
+ function menu:Label(text)
  local Label = Instance.new("TextLabel")
  local PaddingLabel = Instance.new("UIPadding")
  local labelfunc = {}
  
  Label.Name = "Label"
- Label.Parent = MenuQuadroPagina
+ Label.Parent = MainFramePage
  Label.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Label.BackgroundTransparency = 1.000
  Label.Size = UDim2.new(0, 325, 0, 20)
@@ -1766,13 +1766,13 @@ end
  return labelfunc
  end
  
- function main:Label1(text)
+ function menu:Label1(text)
  local Label1 = Instance.new("TextLabel")
  local PaddingLabel1 = Instance.new("UIPadding")
  local Label1func = {}
  
  Label1.Name = "Label1"
- Label1.Parent = MenuQuadroPagina
+ Label1.Parent = MainFramePage
  Label1.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Label1.BackgroundTransparency = 1.000
  Label1.Size = UDim2.new(0, 325, 0, 20)
@@ -1792,14 +1792,14 @@ end
  return Label1func
  end
  
-function main:Seperator(text)
+function menu:Seperator(text)
  local Seperator = Instance.new("Frame")
  local Sep1 = Instance.new("Frame")
  local Sep2 = Instance.new("TextLabel")
  local Sep3 = Instance.new("Frame")
  
  Seperator.Name = "Seperator"
- Seperator.Parent = MenuQuadroPagina
+ Seperator.Parent = MainFramePage
  Seperator.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Seperator.BackgroundTransparency = 1.000
  Seperator.Size = UDim2.new(0, 320, 0, 20)
@@ -1831,12 +1831,12 @@ function main:Seperator(text)
  end
  
  
- function main:Line()
+ function menu:Line()
  local Linee = Instance.new("Frame")
  local Line = Instance.new("Frame")
  
  Linee.Name = "Linee"
- Linee.Parent = MenuQuadroPagina
+ Linee.Parent = MainFramePage
  Linee.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Linee.BackgroundTransparency = 1.000
  Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
@@ -1849,7 +1849,7 @@ function main:Seperator(text)
  Line.Position = UDim2.new(0, 0, 0, 10)
  Line.Size = UDim2.new(0, 530, 0, 1)
  end
- return main
+ return menu
  end
  return uitab
 end
@@ -3801,7 +3801,7 @@ end)
 
  
 --------------------------------------------------------------------
-local Library = Update:Window("ROBOT X HUB","")
+local Library = Update:Window("FTS X HUB ","")
 ------------------------------------------
 
 spawn(function()
@@ -5714,7 +5714,7 @@ Main:Toggle("Auto Chest Tween",_G.Grab_Chest,function(vu)
 end)
 
 Main:Button("Instant Tp Chest (Risk)",function()
- loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Chest_onoff"))()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/menu/Chest_onoff"))()
  end)
 
 if World3 then
@@ -5799,8 +5799,8 @@ end)
             while wait() do
                 if _G.AutoObservation then
                     if game:GetService("Players").LocalPlayer.VisionRadius.Value >= 3000 then
-local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
-local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/menu/STX/Module.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/menu/STX/Client.Lua"))()
 wait(1)
 Notification:Notify(
    {Title = "MADOX HUB", Description = "You Have Max Observation"},
