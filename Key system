@@ -1,77 +1,81 @@
--- Cria uma nova tela de GUI
+-- Definindo as cores
+local cor_fundo = Color3.fromRGB(192, 192, 192) -- cinza
+local cor_titulo = Color3.fromRGB(0, 0, 0) -- preto
+local cor_botoes = Color3.fromRGB(133, 193, 233) -- azul claro
+local cor_borda = Color3.fromRGB(255, 255, 255) -- branco
+local cor_texto = Color3.fromRGB(0, 0, 0) -- preto
+
+-- Definindo o tamanho da tela
 local gui = Instance.new("ScreenGui")
-gui.Name = "RobotXHub"
-gui.ResetOnSpawn = false
-gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 gui.Parent = game.CoreGui
+gui.IgnoreGuiInset = true
 
--- Cria o contêiner principal
-local container = Instance.new("Frame")
-container.Size = UDim2.new(0.3, 0, 0.3, 0)
-container.Position = UDim2.new(0.35, 0, 0.35, 0)
-container.BackgroundColor3 = Color3.new(0, 1, 0)
-container.BorderSizePixel = 0
-container.Parent = gui
+-- Criando o frame principal
+local frame = Instance.new("Frame")
+frame.Parent = gui
+frame.Size = UDim2.new(0.3, 0, 0.4, 0)
+frame.Position = UDim2.new(0.35, 0, 0.3, 0)
+frame.BackgroundColor3 = cor_fundo
+frame.BorderColor3 = cor_borda
+frame.BorderSizePixel = 3
 
--- Cria o título do GUI
-local title = Instance.new("TextLabel")
-title.Size = UDim2.new(0.5, 0, 0.1, 0)
-title.Position = UDim2.new(0.5, 0, 0, 0)
-title.AnchorPoint = Vector2.new(0.5, 0)
-title.Text = "ROBOT X HUB"
-title.TextSize = 20
-title.TextColor3 = Color3.new(1, 1, 1)
-title.BackgroundTransparency = 1
-title.Parent = container
+-- Criando o título
+local titulo = Instance.new("TextLabel")
+titulo.Parent = frame
+titulo.Text = "ROBOT X HUB"
+titulo.TextColor3 = cor_titulo
+titulo.TextScaled = true
+titulo.Size = UDim2.new(1, 0, 0.1, 0)
+titulo.Position = UDim2.new(0, 0, 0, 0)
+titulo.BackgroundColor3 = cor_fundo
 
--- Cria o botão para fechar o GUI
-local closeButton = Instance.new("TextButton")
-closeButton.Size = UDim2.new(0.05, 0, 0.05, 0)
-closeButton.Position = UDim2.new(0.95, 0, 0, 0)
-closeButton.Text = "X"
-closeButton.TextSize = 20
-closeButton.TextColor3 = Color3.new(1, 1, 1)
-closeButton.BackgroundColor3 = Color3.new(1, 0, 0)
-closeButton.BorderSizePixel = 0
-closeButton.Parent = container
-
--- Adiciona o evento de clique ao botão de fechar
-closeButton.MouseButton1Click:Connect(function()
+-- Criando o botão de saída
+local botao_sair = Instance.new("TextButton")
+botao_sair.Parent = frame
+botao_sair.Text = "X"
+botao_sair.TextColor3 = cor_texto
+botao_sair.TextScaled = true
+botao_sair.Size = UDim2.new(0.05, 0, 0.05, 0)
+botao_sair.Position = UDim2.new(0.95, 0, 0, 0)
+botao_sair.BackgroundColor3 = cor_fundo
+botao_sair.BorderSizePixel = 0
+botao_sair.AutoButtonColor = false
+botao_sair.MouseButton1Click:Connect(function()
     gui:Destroy()
 end)
 
--- Cria o campo de entrada de chave
-local keyInput = Instance.new("TextBox")
-keyInput.Size = UDim2.new(0.8, 0, 0.2, 0)
-keyInput.Position = UDim2.new(0.1, 0, 0.15, 0)
-keyInput.Text = ""
-keyInput.TextColor3 = Color3.new(1, 1, 1)
-keyInput.PlaceholderText = "Digite sua chave aqui"
-keyInput.BackgroundColor3 = Color3.new(0, 0, 0)
-keyInput.BorderSizePixel = 0
-keyInput.Parent = container
+-- Criando a barra para inserção de key
+local barra_key = Instance.new("TextBox")
+barra_key.Parent = frame
+barra_key.PlaceholderText = "Insira sua key aqui"
+barra_key.Size = UDim2.new(0.9, 0, 0.1, 0)
+barra_key.Position = UDim2.new(0.05, 0, 0.2, 0)
+barra_key.BackgroundColor3 = cor_botoes
+barra_key.BorderSizePixel = 0
+barra_key.TextColor3 = cor_texto
+barra_key.TextScaled = true
+barra_key.ClearTextOnFocus = true
 
--- Cria o botão de confirmação
+-- cria o botão de confirmação
 local confirmButton = Instance.new("TextButton")
 confirmButton.Name = "ConfirmButton"
-confirmButton.Text = "Confirm"
+confirmButton.Parent = mainFrame
+confirmButton.BackgroundColor3 = Color3.fromRGB(51, 153, 102)
+confirmButton.Position = UDim2.new(0.4, 0, 0.6, 0)
+confirmButton.Size = UDim2.new(0.2, 0, 0.1, 0)
 confirmButton.Font = Enum.Font.SourceSans
-confirmButton.TextSize = 18
-confirmButton.Position = UDim2.new(0.5, -50, 0.6, 0)
-confirmButton.Size = UDim2.new(0, 100, 0, 30)
-confirmButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-confirmButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-confirmButton.Parent = container
+confirmButton.Text = "CONFIRM"
+confirmButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+confirmButton.TextSize = 24
 
--- Adiciona o evento de clique ao botão de confirmação
+-- adiciona um evento de clique ao botão de confirmação
 confirmButton.MouseButton1Click:Connect(function()
-    local key = keyTextBox.Text
-    if key == "ROBOTTEST" then
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Andrey9Script/ROBOT-X-HUB/main/lol.txt')))()
-        gui:Destroy()
-    else
-        errorLabel.Text = "Incorrect key. Click 'Get Key' to obtain a new one."
-        errorLabel.Visible = true
-        getKeyButton.Visible = true
-    end
+   -- verifica se a chave está correta
+   if keyTextBox.Text == "ROBOT X HUB" then
+       -- executa o script
+       loadstring(scriptContent)()
+   else
+       -- exibe a mensagem de erro
+       keyTextBox.Text = "Clique em GET KEY"
+   end
 end)
