@@ -1,4 +1,4 @@
-_G.Key = "ROBOT" --key
+_G.Key = "" --สามารถใส่คีย์ได้
 _G.UIColor = Color3.fromRGB(255,255,255)
 local Logo = ("12986011583")
 _G.NameHub = "ROBOT X HUB"
@@ -73,33 +73,7 @@ NameHub.Text = _G.NameHub
 NameHub.TextColor3 = _G.UIColor
 NameHub.TextSize = 18.000
 
--- Define a função que verifica se a chave é válida
-local function validarChave()
-  -- Substitua "chavecorreta" pela chave correta que você deseja verificar
-  if key.Text == "ROBOTKEY" then
-    print("Chave correta, permitindo o início...")
-    -- Adicione o código que você deseja executar quando a chave for correta aqui
-    local SysemKeyyy = game.CoreGui:FindFirstChild("Loading")
-    Main:TweenSize(UDim2.new(0,0,0,0),"Out","Quad",0.4,true)
-    wait(0.4)
-    SysemKeyyy:Destroy()
-    --loadstring(game:HttpGet(('loadstring(game:HttpGet(('https://raw.githubusercontent.com/Andrey9Script/ROBOT-X-HUB/main/lol.txt')))()')))()-- You Script'
-  else
-    print("chave incorreta, clique em GetKey!")
-    -- Adicione o código que você deseja executar quando a chave for incorreta aqui
-  end
-end
 
--- Remove as funções dos outros botões
-for _, button in pairs(ButtonList:GetChildren()) do
-  if button:IsA("TextButton") and button.Name ~= "GetKey" then
-    button.MouseButton1Click:Connect(function()
-      print("Clique Em GetKey!")
-    end)
-  end
-end
-
--- Modifica o botão "Start" para chamar a função validarChave antes de iniciar o script
 Start.Name = "Start"
 Start.Parent = Main
 Start.BackgroundColor3 = Color3.fromRGB(20, 21, 22)
@@ -107,12 +81,26 @@ Start.BorderSizePixel = 0
 Start.Position = UDim2.new(0.7, 0, 0, 150)
 Start.Size = UDim2.new(0, 95, 0, 28)
 Start.Font = Enum.Font.Gotham
-Start.Text = "Script pro"
+Start.Text = "Start Script"
 Start.TextColor3 = Color3.fromRGB(255, 255,255)
 Start.TextSize = 14.000
 Start.MouseButton1Click:Connect(function()
-  validarChave()
+    local key = KeyBox.Text -- Obtém o texto digitado pelo usuário na caixa de texto da chave
+    if key == "Test" then -- Substitua "SuaChaveAqui" pela chave que você quer validar
+        local SysemKeyyy = game.CoreGui:FindFirstChild("Loading")
+        Main:TweenSize(UDim2.new(0,0,0,0),"Out","Quad",0.4,true)
+        wait(0.4)
+        SysemKeyyy:Destroy()
+        -- loadstring(game:HttpGet(('https://raw.githubusercontent.com/Andrey9Script/ROBOT-X-HUB/main/lol.txt')))()
+    else
+        -- Mostra uma mensagem de erro se a chave for inválida
+        KeyBox.Text = ""
+        KeyBox.PlaceholderText = "Chave inválida!"
+        wait(2)
+        KeyBox.PlaceholderText = "Digite sua chave aqui"
+    end
 end)
+
 
 UICorner2.CornerRadius = UDim.new(0, 10)
 UICorner2.Parent = Start
@@ -125,18 +113,18 @@ ButtonColor2.LineJoinMode = Enum.LineJoinMode.Round
 ButtonColor2.Color = _G.UIColor
 ButtonColor2.Transparency = 0.10
 
-GetKey.Name = "Get Key"
+GetKey.Name = "Discord"
 GetKey.Parent = Main
 GetKey.BackgroundColor3 = Color3.fromRGB(20, 21, 22)
 GetKey.BorderSizePixel = 0
 GetKey.Position = UDim2.new(0.09, 0, 0, 150)
 GetKey.Size = UDim2.new(0, 95, 0, 28)
 GetKey.Font = Enum.Font.Gotham
-GetKey.Text = "Pegue Sua Chave"
+GetKey.Text = "Join my discord"
 GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
 GetKey.TextSize = 14.000
 GetKey.MouseButton1Click:Connect(function()
-setclipboard("link") --YouWap
+setclipboard("https://discord.gg/RsBHAqQtHe") --YouWap
 log("คุณได้คัดลอกลิงค์เป็นที่เรียบร้อยแล้ว","9649923603",2)
 end)
 ButtonColor3.Thickness = 3.2
@@ -185,7 +173,7 @@ TextBox.ClearTextOnFocus = false
 TextBox.Font = Enum.Font.Gotham
 TextBox.PlaceholderColor3 = Color3.fromRGB(20, 21, 22)
 TextBox.PlaceholderText = "Type here!"
-TextBox.Text = "Script Hack Pro"
+TextBox.Text = "Please click the Script No Key"
 TextBox.TextColor3 = Color3.fromRGB(255,255,255)
 TextBox.TextSize = 12.00
 
@@ -289,7 +277,7 @@ function LoadingScript(Text)
 register_key = Text
 	for i,v in pairs(SysemKey) do	
 		if v == register_key then
-       	TextBox.Text = "Key"
+       	TextBox.Text = "คีย์ถูกต้อง"
       	 wait(.5)
       	 TextBox.TextColor3 = Color3.fromRGB(0,255,0)
       	 wait(1)
@@ -298,15 +286,15 @@ register_key = Text
 			wait(0.4)
 			SysemKeyyy:Destroy()
 			--- SRC
-     elseif TextBox.Text == "ScriptPro" then
+     elseif TextBox.Text == "Please click the Script No Key" then
         	TextBox.TextColor3 = Color3.fromRGB(255,255,255)
-        	TextBox.Text = "Script Pro"
+        	TextBox.Text = "Please click the Script No Key"
 	  else
 		   TextBox.TextColor3 = Color3.fromRGB(255,0,0)
            TextBox.Text = "คีย์ไม่ถูกต้อง"
            wait(1)
            TextBox.TextColor3 = Color3.fromRGB(255,255,255)
-     	  TextBox.Text = "Script Pro"
+     	  TextBox.Text = "Please click the Script No Key"
 		end
 	end
 end
