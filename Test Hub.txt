@@ -1,7 +1,7 @@
-_G.Key = "" --สามารถใส่คีย์ได้
+_G.Key = "ROBOT" --key
 _G.UIColor = Color3.fromRGB(255,255,255)
 local Logo = ("12986011583")
-_G.NameHub = "FTS X HUB"
+_G.NameHub = "ROBOT X HUB"
 
 local Loading = Instance.new("ScreenGui")
 local Blur = Instance.new("Frame")
@@ -103,18 +103,18 @@ ButtonColor2.LineJoinMode = Enum.LineJoinMode.Round
 ButtonColor2.Color = _G.UIColor
 ButtonColor2.Transparency = 0.10
 
-GetKey.Name = "Discord"
+GetKey.Name = "Get Key"
 GetKey.Parent = Main
 GetKey.BackgroundColor3 = Color3.fromRGB(20, 21, 22)
 GetKey.BorderSizePixel = 0
 GetKey.Position = UDim2.new(0.09, 0, 0, 150)
 GetKey.Size = UDim2.new(0, 95, 0, 28)
 GetKey.Font = Enum.Font.Gotham
-GetKey.Text = "Join my discord"
+GetKey.Text = "Pegue Sua Chave"
 GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
 GetKey.TextSize = 14.000
 GetKey.MouseButton1Click:Connect(function()
-setclipboard("https://discord.gg/RsBHAqQtHe") --YouWap
+setclipboard("link") --YouWap
 log("คุณได้คัดลอกลิงค์เป็นที่เรียบร้อยแล้ว","9649923603",2)
 end)
 ButtonColor3.Thickness = 3.2
@@ -163,7 +163,7 @@ TextBox.ClearTextOnFocus = false
 TextBox.Font = Enum.Font.Gotham
 TextBox.PlaceholderColor3 = Color3.fromRGB(20, 21, 22)
 TextBox.PlaceholderText = "Type here!"
-TextBox.Text = "Please click the Script No Key"
+TextBox.Text = "Script Hack Pro"
 TextBox.TextColor3 = Color3.fromRGB(255,255,255)
 TextBox.TextSize = 12.00
 
@@ -267,7 +267,7 @@ function LoadingScript(Text)
 register_key = Text
 	for i,v in pairs(SysemKey) do	
 		if v == register_key then
-       	TextBox.Text = "คีย์ถูกต้อง"
+       	TextBox.Text = "Key"
       	 wait(.5)
       	 TextBox.TextColor3 = Color3.fromRGB(0,255,0)
       	 wait(1)
@@ -276,15 +276,15 @@ register_key = Text
 			wait(0.4)
 			SysemKeyyy:Destroy()
 			--- SRC
-     elseif TextBox.Text == "Please click the Script No Key" then
+     elseif TextBox.Text == "ScriptPro" then
         	TextBox.TextColor3 = Color3.fromRGB(255,255,255)
-        	TextBox.Text = "Please click the Script No Key"
+        	TextBox.Text = "Script Pro"
 	  else
 		   TextBox.TextColor3 = Color3.fromRGB(255,0,0)
            TextBox.Text = "คีย์ไม่ถูกต้อง"
            wait(1)
            TextBox.TextColor3 = Color3.fromRGB(255,255,255)
-     	  TextBox.Text = "Please click the Script No Key"
+     	  TextBox.Text = "Script Pro"
 		end
 	end
 end
