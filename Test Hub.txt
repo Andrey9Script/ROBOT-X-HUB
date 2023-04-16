@@ -16,10 +16,7 @@ local UiCorner3 = instance.new("UiCorner")
 local UiCorner4 = instance.new("UiCorner")
 local UiCorner5 = instance.new("UiCorner")
 local corbotao = instance.new("UiStroke")
-local corbotao2 instance.new("UiStroke")
-local corbotao3 instance.new("UiStroke")
-local corbotao4 instance.new("UiStroke")
-local corbotao5 instance.new("UiStroke")
+
 
 test.Name = "test"
 test.Parent = game.CoreGui
