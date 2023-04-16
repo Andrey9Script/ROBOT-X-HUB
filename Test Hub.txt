@@ -1,37 +1,29 @@
-local test = instance.new("ScreenGui")
-local menu = instance.new("Frame")
-local barra = instance.new("Frame")
-local borrao = instance.new("Frame")
-local frame = instance.new("Frame")
-local CaixaTexto = instance.new("TextBox")
-local RotuloTexto = instance.new("TextLabel")
-local X = instance.new("TextButton")
-local continuar = instance.new("TextButton")
+local test = Instance.new("ScreenGui")
+local menu = Instance.new("Frame")
+local barra = Instance.new("Frame")
+local borrao = Instance.new("Frame")
+local frame = Instance.new("Frame")
+local CaixaTexto = Instance.new("TextBox")
+local RotuloTexto = Instance.new("TextLabel")
+local X = Instance.new("TextButton")
+local continuar = Instance.new("TextButton")
 local botaoMenuPrincipal = Instance.new("TextButton")
 local botaoMenuSecundario = Instance.new("TextButton")
-local pegarchave = instance.new("TextButton")
-local UiCorner = instance.new("UiCorner")
-local UiCorner2 = instance.new("UiCorner")
-local UiCorner3 = instance.new("UiCorner")
-local UiCorner4 = instance.new("UiCorner")
-local UiCorner5 = instance.new("UiCorner")
-local corbotao = instance.new("UiStroke")
-local corbotao2 = instance.new("UiStroke")
-local corbotao3 = instance.new("UiStroke")
-local corbotao4 = instance.new("UiStroke")
-local corbotao5 = instance.new("UiStroke")
+local pegarchave = Instance.new("TextButton")
+local UiCorner = Instance.new("UICorner")
+local UiCorner3 = Instance.new("UICorner")
+
 
 test.Name = "test"
 test.Parent = game.CoreGui
 test.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 -- borrão
-Borrao.Name = "borrao"
-Borrao.Parent = test
-Borrao.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Borrao.BackgroundTransparency = 1
-Borrao.Size = UDim2.new(1, 0, 1, 0)
-
+borrao.Name = "borrao"
+borrao.Parent = test
+borrao.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+borrao.BackgroundTransparency = 1
+borrao.Size = UDim2.new(1, 0, 1, 0)
 
 -- menu
 menu.Name = "menu"
@@ -50,10 +42,8 @@ barra.BackgroundTransparency = 0.700
 barra.BorderSizePixel = 0
 barra.Position = UDim2.new(0, 0, 0, 40)
 barra.Size = UDim2.new(0, 455, 0, 3)
-
-local UiCorner2 = Instance.new("UICorner")
-UiCorner2.CornerRadius = UDim.new(0, 6)
-UiCorner2.Parent = barra
+UiCorner.CornerRadius = UDim.new(0, 6)
+UiCorner.Parent = barra
 
 CaixaTexto.Name = "CaixaTexto"
 CaixaTexto.Parent = barra
@@ -68,8 +58,8 @@ local function verificarSenha()
     local senhaCorreta = "ROBOT" -- senha correta
     if CaixaTexto.Text == senhaCorreta then
         print("Senha correta, executando!")
-        -- 
     else
+
         print("Senha incorreta, Pegue Sua Chave!!")
     end
 end
