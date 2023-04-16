@@ -1,21 +1,21 @@
-local test instance.new("ScreenGui")
-local menu instance.new("Frame")
-local barra instance.new("Frame")
-local borrao instance.new("Frame")
-local frame instance.new("Frame")
-local CaixaTexto instance.new("TextBox")
-local RotuloTexto instance.new("TextLabel")
-local X instance.new("TextButton")
-local continuar instance.new("TextButton")
+local test = instance.new("ScreenGui")
+local menu = instance.new("Frame")
+local barra = instance.new("Frame")
+local borrao = instance.new("Frame")
+local frame = instance.new("Frame")
+local CaixaTexto = instance.new("TextBox")
+local RotuloTexto = instance.new("TextLabel")
+local X = instance.new("TextButton")
+local continuar = instance.new("TextButton")
 local botaoMenuPrincipal = Instance.new("TextButton")
 local botaoMenuSecundario = Instance.new("TextButton")
-local pegarchave instance.new("TextButton")
-local UiCorner instance.new("UiCorner")
-local UiCorner2 instance.new("UiCorner")
-local UiCorner3 instance.new("UiCorner")
-local UiCorner4 instance.new("UiCorner")
-local UiCorner5 instance.new("UiCorner")
-local corbotao instance.new("UiStroke")
+local pegarchave = instance.new("TextButton")
+local UiCorner = instance.new("UiCorner")
+local UiCorner2 = instance.new("UiCorner")
+local UiCorner3 = instance.new("UiCorner")
+local UiCorner4 = instance.new("UiCorner")
+local UiCorner5 = instance.new("UiCorner")
+local corbotao = instance.new("UiStroke")
 local corbotao2 instance.new("UiStroke")
 local corbotao3 instance.new("UiStroke")
 local corbotao4 instance.new("UiStroke")
@@ -43,7 +43,6 @@ menu.Position = UDim2.new(0.5, -212, 0.5, -92)
 
 -- barra
 -- adiciona barra de entrada de texto
-local barra = Instance.new("Frame")
 barra.Name = "barra"
 barra.Parent = menu
 barra.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -56,7 +55,6 @@ local UiCorner2 = Instance.new("UICorner")
 UiCorner2.CornerRadius = UDim.new(0, 6)
 UiCorner2.Parent = barra
 
-local CaixaTexto = Instance.new("TextBox")
 CaixaTexto.Name = "CaixaTexto"
 CaixaTexto.Parent = barra
 CaixaTexto.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -90,12 +88,10 @@ continuar.TextColor3 = Color3.fromRGB(0, 0, 0)
 continuar.TextSize = 20.000
 continuar.MouseButton1Click:Connect(verificarSenha)
 
-local UiCorner3 = Instance.new("UICorner")
 UiCorner3.CornerRadius = UDim.new(0, 6)
 UiCorner3.Parent = continuar
 
 -- botão pegar chave
-local pegarchave = Instance.new("TextButton")
 pegarchave.Name = "PegarChave"
 pegarchave.Parent = menu
 pegarchave.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
