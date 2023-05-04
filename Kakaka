@@ -1,0 +1,278 @@
+local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local oldMenu = playerGui:FindFirstChild("Hub")
+if oldMenu then
+    oldMenu:Destroy()
+end
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "PartG"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local G_ = Color3.new(0, 255, 0)
+
+local MenuPequeno = Instance.new("ImageButton")
+MenuPequeno.Size = UDim2.new(0, 50, 0, 50)
+MenuPequeno.Image = "rbxassetid://13267780707"
+MenuPequeno.Position = UDim2.new(0, 10, 0, 10)
+MenuPequeno.Parent = ScreenGui
+MenuPequeno.Draggable = true
+MenuPequeno.Active = true
+
+local menu = Instance.new("Frame")
+menu.Size = UDim2.new(0, 554, 0, 350)
+menu.Position = UDim2.new(0.5, -250, 0.5, -125)
+menu.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+menu.BorderColor3 = G_
+menu.Visible = false
+menu.Parent = ScreenGui
+menu.Draggable = true
+menu.Active = true
+
+MenuPequeno.MouseButton1Click:Connect(function()
+    menu.Visible = not menu.Visible
+end)
+
+-- Barra Do Topo --
+local TituloPrincipal = Instance.new("TextLabel")
+TituloPrincipal.Text = "Robot X Blox"
+TituloPrincipal.Position = UDim2.new(0, 50, 0, 25)
+TituloPrincipal.TextColor3 = Color3.fromRGB(255, 255, 255)
+TituloPrincipal.BackgroundTransparency = 1
+TituloPrincipal.Parent = menu
+
+
+local NomeJogo = Instance.new("TextLabel")
+NomeJogo.Text = "Blox Fruit UPD 19"
+NomeJogo.Position = UDim2.new(0.5, -NomeJogo.TextBounds.X/2, 0, 25)
+NomeJogo.TextColor3 = Color3.fromRGB(0, 255, 0)
+NomeJogo.BackgroundTransparency = 1
+NomeJogo.Parent = menu
+
+local fpsLabel = Instance.new("TextLabel")
+fpsLabel.Text = "FPS: 0"
+fpsLabel.Position = UDim2.new(1, -100, 0, 25)
+fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+fpsLabel.BackgroundTransparency = 1
+fpsLabel.Parent = menu
+
+local minFPS = math.huge
+local maxFPS = 0
+local avgFPS = 0
+local frameCount = 0
+
+local function updateFPS()
+    local fps = math.floor(game.Workspace:GetRealPhysicsFPS())
+    minFPS = math.min(minFPS, fps)
+    maxFPS = math.max(maxFPS, fps)
+    avgFPS = (avgFPS * frameCount + fps) / (frameCount + 1)
+    frameCount = frameCount + 1
+    fpsLabel.Text = string.format("FPS: %d\nMin: %d\nMax: %d\nAvg: %.1f", fps, minFPS, maxFPS, avgFPS)
+end
+
+game:GetService("RunService").Heartbeat:Connect(updateFPS)
+
+---------------------
+function topos(Pos)
+        Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+        if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
+        pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/210, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
+        tween:Play()
+        if Distance <= 290 then
+            tween:Cancel()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
+        end
+        if _G.StopTween == true then
+            tween:Cancel()
+            _G.Clip = false
+        end
+    end
+    
+    function GetDistance(target)
+        return math.floor((target.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude)
+    end
+
+
+function StopTween(target)
+	if not target then
+		_G.StopTween = true
+		wait()
+		topos(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+		wait()
+		if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
+		end
+		_G.StopTween = false
+		_G.Clip = false
+	end
+end
+------------------------
+
+local Linha = Instance.new("Frame")
+Linha.Size = UDim2.new(1, 0, 0, 1)
+Linha.Position = UDim2.new(0, 0, 0, 50)
+Linha.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Linha.BorderSizePixel = 0
+Linha.Parent = menu
+
+-- Create the line
+local Line = Instance.new("Frame")
+Line.Size = UDim2.new(0, 1, 1, 0)
+Line.Position = UDim2.new(0, 100, 0, 0)
+Line.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Line.BorderSizePixel = 0
+Line.Parent = menu
+
+-- Barra Lateral --
+-- Create the scrolling frame
+local ScrollingFrame = Instance.new("ScrollingFrame")
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 350)
+ScrollingFrame.Size = UDim2.new(0, 80, 0, 300)
+ScrollingFrame.Position = UDim2.new(0, 9, 0, 50)
+ScrollingFrame.BackgroundTransparency = 1
+ScrollingFrame.ScrollBarThickness = 0 -- Show the scrollbar
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Parent = menu
+
+-- Create the UIListLayout to automatically position the buttons
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Parent = ScrollingFrame
+
+-- Create the buttons and tabs
+local buttonNames = {"Home", "Main", "Teleport", "Player", "Esp", "Config", "Status"}
+local tabs = {}
+for i, name in ipairs(buttonNames) do
+    -- Create the button
+    local button = Instance.new("TextButton")
+    button.Text = name
+    button.TextColor3 = Color3.new(0, 255, 0) -- Set the text color to white
+    button.Size = UDim2.new(1, 0, 0, 50)
+    button.BackgroundTransparency = 1
+    button.BorderColor3 = Color3.new(1, 1, 1)
+    button.Parent = ScrollingFrame
+
+    -- Create the tab
+    local tab = Instance.new("ScrollingFrame")
+    tab.Size = UDim2.new(0, 400, 0, 290)
+    tab.Position = UDim2.new(0, 125, 0, 60)
+    tab.BackgroundTransparency = 1
+    tab.BorderSizePixel = 0
+    tab.ScrollBarThickness = 0 -- Show the scrollbar
+    tab.Visible = i == 1 -- Only show the first tab by default
+    tab.Parent = menu
+
+    -- Add functionality to the button to show and hide the tab
+    button.MouseButton1Click:Connect(function()
+        for j, otherTab in ipairs(tabs) do
+            otherTab.Visible = j == i
+        end
+    end)
+
+    table.insert(tabs, tab)
+end
+
+-- Find the "Teleport" tab
+local teleportTab = nil
+for i, tab in ipairs(tabs) do
+    if buttonNames[i] == "Teleport" then
+        teleportTab = tab
+        break
+    end
+end
+
+
+
+
+
+-- Create the TextLabel
+local textLabel = Instance.new("TextLabel")
+textLabel.Text = "// Teleport \\"
+textLabel.Size = UDim2.new(1, 0, 0, 50)
+textLabel.BackgroundTransparency = 1
+textLabel.TextColor3 = Color3.new(1, 1, 1)
+textLabel.Parent = teleportTab
+
+-- Create the separator line
+local separator = Instance.new("Frame")
+separator.Size = UDim2.new(1, 0, 0, 1)
+separator.Position = UDim2.new(0, 0, 0, 50)
+separator.BackgroundColor3 = Color3.new(1, 1, 1)
+separator.BorderSizePixel = 0
+separator.Parent = teleportTab
+
+-- Create the button
+local button = Instance.new("TextButton")
+button.Text = "List Teleport Sea 1"
+button.Size = UDim2.new(0, 100, 0, 50)
+button.Position = UDim2.new(0.5, -50, 0, 60)
+button.BackgroundTransparency = 1
+button.BorderColor3 = Color3.new(1, 1, 1)
+button.Parent = teleportTab
+
+-- Create the list of buttons
+local buttonListFrame = Instance.new("Frame")
+buttonListFrame.Size = UDim2.new(1, 0, 1, -120)
+buttonListFrame.Position = UDim2.new(0, 150, 0, 120)
+buttonListFrame.BackgroundTransparency = 1
+buttonListFrame.Parent = teleportTab
+
+teleportTab.CanvasSize = UDim2.new(0, 0, 0, 1000) -- Aumenta a altura para 1000
+
+local listLayout = Instance.new("UIListLayout")
+listLayout.Parent = buttonListFrame
+
+local buttonNames = {"Starter Island (Pirate)", "Starter Island (Marine)", "Middle Island", "Jungle", "Pirate Village", "Desert", "Frozen Village", "Marine Fortress", "Sky Piea Island", "Impel Down (Prison)", "Colosseum", "Magma Village", "UnderWatter City", "Upper Yard Entrance", "Upper Yard First Area", "Upper Yard Second Area", "Water 7"}
+for i, name in ipairs(buttonNames) do
+    local subButton = Instance.new("TextButton")
+    subButton.Text = name
+    subButton.Size = UDim2.new(0, 100, 0, 50)
+    subButton.Position = UDim2.new(0.5, -50, 0, (i - 1) * 60)
+    subButton.BackgroundTransparency = 1
+    subButton.BorderColor3 = Color3.new(1, 1, 1)
+    subButton.Parent = buttonListFrame
+end
+
+-- Define the teleport locations
+local locations = {
+    ["Starter Island (Pirate)"] = CFrame.new(885, 17, 1430),
+    ["Starter Island (Marine)"] = CFrame.new(-2734, 24, 2055),
+    ["Middle Island"] = CFrame.new(-652, 8, 1576),
+    ["Jungle"] = CFrame.new(-1443, 62, -40),
+    ["Pirate Village"] = CFrame.new(-1169, 45, 3842),
+    ["Desert"] = CFrame.new(903, 6, 4479),
+    ["Frozen Village"] = CFrame.new(1397, 88, -1348),
+    ["Marine Fortress"] = CFrame.new(-4923, 21, 4248),
+    ["Skypiea Island"] = CFrame.new(-4868, 718, -2632),
+    ["Impel Down (Prison)"] = CFrame.new(4870, 6, 736),
+    ["Colosseum"] = CFrame.new(-1486, 7, -2929),
+    ["Magma Village"] = CFrame.new(-5243, 9, 8419),
+    ["Underwater City"] = CFrame.new(3876, 5, -1899),
+    ["Upper Yard Entrance"] = CFrame.new(-4660, 873, -1767),
+    ["Upper Yard First Area"] = CFrame.new(-4650, 846, -1720),
+    ["Upper Yard Second Area"] = CFrame.new(-7892, 5636, -1435),
+    ["Fountain City / Water 7"] = CFrame.new(5261, 38, 4033)
+}
+
+for i, button in ipairs(buttonListFrame:GetChildren()) do
+    if button:IsA("TextButton") then
+        local location = locations[button.Text]
+        if location then
+            button.MouseButton1Click:Connect(function()
+                topos(location)
+            end)
+        end
+    end
+end
+
+------------------------
+
+-- Find the "Teleport" tab
+local teleportTab = nil
+for i, tab in ipairs(tabs) do
+    if buttonNames[i] == "Teleport" then
+        teleportTab = tab
+        break
+    end
+end
+
+-- Find the button list frame
+local buttonListFrame = teleportTab:FindFirstChild("ButtonListFrame")
